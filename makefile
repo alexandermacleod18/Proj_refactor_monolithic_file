@@ -1,13 +1,14 @@
 CFLAGS = -Wall
 CC = g++
+fileio.o: ../fileio/fileio.cpp ../includes/fileio.h ../includes/constants.h ../includes/utils.h
+	$(CC) $(CFLAGS) -c ../fileio/fileio.cpp
+
 #TODO link (-o) all object files into the executable myexe
 main: fileio.o utils.o fileio.o proj_refactor_file.o
 	$(CC) $(CFLAGS) -o myexe fileio.o utils.o proj_refactorfiles.o
 	
 #rebuild object file if fileio.cpp, or fileio.h or constants.h changes
 #compile the .cpp file to an object file (-c)
-fileio.o: ../fileio/fileio.cpp ../includes/fileio.h ../includes/constants.h ../includes/utils.h
-	$(CC) $(CFLAGS) -c ../fileio/fileio.cpp
 	
 #TODO 
 utils.o: ../utils/utils.cpp ../includes/utils.h ../includes/constants.h

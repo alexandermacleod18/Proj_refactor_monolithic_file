@@ -1,8 +1,8 @@
 #ifndef UTILITIES_H_
 #define UTILITIES_H_
-using namespace std;
 #include <vector>
 #include "constants.h"
+using namespace std;
 	//attempt to open file 'filename' and read in all data
 	//returns SUCCESS if all goes well or COULD_NOT_OPEN_FILE
 	int loadData(const std::string filename, vector<process> &myProcesses);
